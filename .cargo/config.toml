@@ -1,0 +1,11 @@
+[build]
+target = "i686-pc-windows-gnu" # gnu by default
+rustflags = [
+    "--remap-path-prefix", "=/",
+    "-C", "strip=debuginfo",
+    "-C", "strip=symbols",
+]
+
+[alias]
+build-plugin = "build --target i686-pc-windows-msvc --release -p tiles_b_gon"
+gnu-build-plugin = "build --target i686-pc-windows-gnu --release -p tiles_b_gon"

@@ -1,0 +1,28 @@
+[profile.release]
+strip = "symbols"
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[workspace]
+resolver = "2"
+members = [
+    "crates/tiles_b_gon",
+
+    # Source Engine FFI bindings
+    "crates/portal2-sdk",
+]
+
+[workspace.package]
+publish = false
+edition = "2024"
+version = "1.0.0"
+
+[workspace.lints.rust] # For exploratory dev only.
+unused = { level = "allow", priority = -1 }
+dead_code = { level = "allow", priority = -1 }
+
+[workspace.dependencies]
+log = "0.4"
+portal2-sdk = { path = "crates/portal2-sdk" }

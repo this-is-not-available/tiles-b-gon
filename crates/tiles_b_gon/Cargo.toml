@@ -1,0 +1,17 @@
+[package]
+name = "tiles_b_gon"
+publish.workspace = true
+edition.workspace = true
+version.workspace = true
+[lints]
+workspace = true
+
+[lib]
+name = "tiles_b_gon"
+crate-type = ["cdylib"]
+
+[dependencies]
+simplelog = "0.12.2"
+
+log.workspace = true
+portal2-sdk.workspace = true

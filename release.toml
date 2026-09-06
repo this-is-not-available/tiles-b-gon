@@ -1,0 +1,25 @@
+# Configuration for the release CI/CD pipeline.
+
+# A header to be prepended to the GitHub release notes.
+# Useful for quick installation instructions or general announcements.
+#-----
+release_notes_header = """
+## Tiles-b-gon v1.0.0
+
+Today I present to you a simple tool to remove the tile animation from Portal 2's menus.
+
+### Install
+Extract the .zip to the Portal 2 folder, making sure the Portal 2/portal2/addons folder is now populated
+"""
+
+[[targets]]
+enabled = true
+crate_name = "tiles_b_gon"
+archive_name = "tiles_b_gon.zip"
+files = [
+    # The server plugin requires a specific structure and VDF file.
+    { source = "$DLL", destination = "portal2/addons/tiles_b_gon.dll" },
+    { source = "assets/tiles_b_gon.vdf", destination = "portal2/addons/tiles_b_gon.vdf" },
+    { source = "LICENSE", destination = "LICENSE" },
+    { source = "README.md", destination = "README.md" }
+]
